@@ -80,16 +80,20 @@ function handleSaveClick() {
 }
 
 if (canvas) {
-  canvas.addEventListener("mousemove", onMouseMove);
-  canvas.addEventListener("mousedown", startPainting);
-  canvas.addEventListener("mouseup", stopPainting);
-  canvas.addEventListener("mouseleave", stopPainting);
-  canvas.addEventListener("click", handleCanvasClick);
+  canvas.addEventListener("mousemove", onMouseMove, false);
+  canvas.addEventListener("mousedown", startPainting, false);
+  canvas.addEventListener("mouseup", stopPainting, false);
+  canvas.addEventListener("mouseleave", stopPainting, false);
+  canvas.addEventListener("click", handleCanvasClick, false);
+  strokeInput.addEventListener("input", onRangeChange, false);
+  fillBtn.addEventListener("click", startFilling, false);
+  drawBt.addEventListener("click", stopFilling, false);
+  saveBtn.addEventListener("click", stopFilling, false);
   canvas.addEventListener("contextmenu", handleCM);
 }
 
 Array.from(colors).forEach((color) =>
-  color.addEventListener("click", handleColorClick)
+  color.addEventListener("click", onColorClick, false)
 );
 
 if (range) {

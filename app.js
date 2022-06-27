@@ -104,6 +104,3 @@ if (saveBtn) {
   saveBtn.addEventListener("click", handleSaveClick);
 }
 
-if (canvas) {
-  canvas.addEventListener("mouseenter", onMouseMove);
-}

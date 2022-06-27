@@ -48,7 +48,7 @@ function handleColorClick(event) {
 
 function handleRangeChange(event) {
   const size = event.target.value;
-  ctx.lineWidth = Size;
+  ctx.lineWidth = size;
 }
 
 function handleModeClick() {
@@ -105,5 +105,5 @@ if (saveBtn) {
 }
 
 if (canvas) {
-  canvas.addEventListener("moseenter", onMouseMove);
+  canvas.addEventListener("mouseenter", onMouseMove);
 }
